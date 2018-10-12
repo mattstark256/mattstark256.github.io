@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Bots In Us"
+date:   2018-10-10 20:08:00 +0100
+tags: Unity
+---
+At Global Game Jam in January 2018 I worked as part of a team of 4 to make Bots In Us, a cyberpunk-themed survival game. The player controls an AI hivemind of nanobot-infected people. The hivemind is being hunted by government agents in a dark forest. The player must send individual people to lure agents away from the group and into bear traps.
+
+Our team was made up of two artists, a programmer and myself. We decided to use 2D sketches in 3D space to create a visual style inspired by the game Don't Starve. The other team members hadn't used Unity before so I implemented the game's mechanics.
+
+Many people played the game when we presented it at the end of the jam. We kept a scoreboard of the top scores, which encouraged people to try to find the best survival strategies. After the presentations everyone voted on their favourite game and we won!
+
+[Link to the Global Game Jam submission][Global-Game-Jam]
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w6KmKlokFiU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+[Global-Game-Jam]: https://globalgamejam.org/2018/games/bots-us

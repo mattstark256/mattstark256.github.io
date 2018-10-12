@@ -1,0 +1,1 @@
+This is my portfolio blog, where I post examples of my work.
