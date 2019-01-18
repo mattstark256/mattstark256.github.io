@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Flux Rush"
+date: 2019-01-18 12:00:00 +0100
+tags: Unity, Android
+---
+In November 2018 I released a free Android game called Flux Rush. It's a puzzle-inspired endless runner where you re-arrange the track.
+
+The track is procedurally generated so there is always a possible route. The title animation uses a shader which takes a texture with colour gradients and clips it by colour values which change with time.
+
+[Link to the game on the Play Store](https://play.google.com/store/apps/details?id=com.MattsGames.FluxRush)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SRIlt_k2z8s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

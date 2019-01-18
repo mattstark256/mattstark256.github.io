@@ -2,7 +2,7 @@
 layout: post
 title:  "Topology Flip"
 date:   2018-10-16 16:39:00 +0100
-tags: Unity
+tags: Unity, Android
 ---
 Topology Flip is a puzzle game I made for Android using Unity. It's a variation of Lights Out, where instead of using a 5 x 5 grid it uses various 3D surfaces. Different shapes require different strategies so the challenge of the game is to figure out how to solve progressively more difficult shapes.
 
