@@ -4,17 +4,17 @@ title: "Window Shaders"
 date: 2019-02-15 12:00:00 +0100
 tags: Unity
 ---
-Some games use shaders for windows to make it look like there is a three-dimensional interior behind the window without requiring any additional geometry. This can have a much lower performance impact than modelled interiors, which is good for situations like city scenes where there are hundreds of windows.
+Some games use shaders for windows to make it look like there is a three-dimensional interior behind the window without needing any additional geometry. This can have a much lower performance impact than modelled interiors, which is good for situations like city scenes where there are hundreds of windows.
 
 I created some window shaders in Unity using several different techniques to create the appearance of depth.
 
 ### Shader 1: Cubemap
-The most basic approach was to sample a cubemap using the view direction. This would only be effective for very large interiors.
+One basic approach is to sample a cubemap using the view direction. This would only be effective for very large interiors.
 
 ![Cubemap Interior]({{ "/assets/window shaders/WindowCubemap.gif" | absolute_url }})
 
 ### Shader 2: Parallax texture
-A more convincing effect can be created by sampling a 2D texture as though it were positioned some distance behind the window's surface. This can be very efficient, because almost all of the calculations can be done in the vertex shader.
+A more convincing effect can be created by sampling a 2D texture as though it were positioned some distance behind the window's surface. This can be very efficient, because almost all of the calculations can be done in the vertex shader. I've included the code for this shader at the bottom of the page.
 
 ![Plane Interior]({{ "/assets/window shaders/WindowPlane.gif" | absolute_url }})
 
