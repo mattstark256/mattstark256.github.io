@@ -33,7 +33,6 @@ This is the code for the second shader described above. The alpha channel of the
             _MainTex("Albedo (RGB)", 2D) = "white" {}
             _SpecularTex("Specular", 2D) = "black" {}
             _NormalTex("Normal", 2D) = "bump" {}
-
             _IndoorTex("Indoor texture", 2D) = "white" {}
             _Depth("Depth", Range(0,5)) = 1
             _IndoorOffset("Indoor position and scale", Vector) = (0,0,1,1)
@@ -60,12 +59,12 @@ This is the code for the second shader described above. The alpha channel of the
                 float2 indoorUV;
             };
 
-            half _Depth;
-            half4 _IndoorOffset;
             sampler2D _MainTex;
             sampler2D _SpecularTex;
             sampler2D _NormalTex;
             sampler2D _IndoorTex;
+            half _Depth;
+            half4 _IndoorOffset;
             fixed4 _IndoorTint;
             fixed4 _BackgroundColor;
 
