@@ -19,7 +19,7 @@ A more convincing effect can be created by sampling a 2D texture as though it we
 ![Plane Interior]({{ "/assets/window shaders/WindowPlane.gif" | absolute_url }})
 
 ### Shader 3: Walls, ceiling and floor
-I also tried recreating the window shader used in Forza Horizon 4, which is discussed in [this Gamasutra article](https://www.gamasutra.com/view/news/332409/Game_Tech_Deep_Dive_A_window_into_Playground_Games_latest_shader_development.php). This shader takes a square 2D texture and projects it so it appears to be a cuboid-shaped interior.
+I tried recreating the window shader used in Forza Horizon 4, which is discussed in [this Gamasutra article](https://www.gamasutra.com/view/news/332409/Game_Tech_Deep_Dive_A_window_into_Playground_Games_latest_shader_development.php). The shader takes a square 2D texture and projects it so it appears to be a cuboid-shaped interior.
 
 The gif below shows my shader in action. I've also included the 2D texture, which I made using Blender. I've used a bay window to demonstrate that the effect works regardless of the shape of the window's mesh.
 
