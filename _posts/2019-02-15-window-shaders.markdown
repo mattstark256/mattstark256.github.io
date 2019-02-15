@@ -8,17 +8,17 @@ Some games use shaders for windows to make it look like there is a three-dimensi
 
 I created some window shaders in Unity using several different techniques to create the appearance of depth.
 
-## Shader 1: Cubemap
+### Shader 1: Cubemap
 The most basic approach was to sample a cubemap using the view direction. This would only be effective for very large interiors.
 
 ![Cubemap Interior]({{ "/assets/window shaders/WindowCubemap.gif" | absolute_url }})
 
-## Shader 2: Parallax texture
+### Shader 2: Parallax texture
 A more convincing effect can be created by sampling a 2D texture as though it were positioned some distance behind the window's surface. This can be very efficient, because almost all of the calculations can be done in the vertex shader.
 
 ![Plane Interior]({{ "/assets/window shaders/WindowPlane.gif" | absolute_url }})
 
-## Shader 3: Forza Horizon 4
+### Shader 3: Forza Horizon 4
 I also tried recreating the window shader used in Forza Horizon 4, which is discussed in [this Gamasutra article](https://www.gamasutra.com/view/news/332409/Game_Tech_Deep_Dive_A_window_into_Playground_Games_latest_shader_development.php). This shader takes a square 2D texture and projects it so it appears to be a cuboid-shaped interior.
 
 The gif below shows my shader in action. I've also included the 2D texture, which I made using Blender. I've used a bay window to demonstrate that the effect works regardless of the shape of the window's mesh.
@@ -27,7 +27,7 @@ The gif below shows my shader in action. I've also included the 2D texture, whic
 
 ![Interior Texture]({{ "/assets/window shaders/Room Thirds.png" | absolute_url }})
 
-## Shader 2 code
+### Shader 2 code
 This is the code for the parallax texture shader described above. The alpha channel of the albedo texture (_MainTex) determines where the interior should be visible. The _IndoorOffset 4D vector represents two 2D vectors, one for the position of the interior texture and one for its scale.
 
     Shader "Custom/Window Shader"
