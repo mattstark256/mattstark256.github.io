@@ -10,7 +10,8 @@ Firelight is a game I made as part of a team of 2 for Global Game Jam 2019. It's
 [Link to the Global Game Jam submission][Global-Game-Jam]
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LCdt8rgqWDE?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+\
+\
 ## Cutscenes
 We wanted the game to have cutscenes with a dialogue system where the player's choice of response could affect how the conversation progressed. We decided the cutscenes should be in scripts, because this would give us the flexibility and control to make each one unique. It allowed us to use conditional statements, for loops, variables etc. We used coroutines so we could pause execution while waiting for the player's response or waiting for an animation to finish.
 
