@@ -11,7 +11,7 @@ The video below shows a Unity shader I made which renders volumetric clouds usin
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8TF5hiHlf7w?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
 
-The shape of the clouds is defined by a tiling perlin noise texture. This texture is used as a heightmap for the bottom and top surfaces of the clouds. Only the volume above the bottom and below the top is rendered, as shown in the cross section below. A small amount of moving noise is also added to both surfaces to simulate turbulence.
+The shape of the clouds is defined by a tiling perlin noise texture. This texture is used as a heightmap for the bottom and top surfaces of the clouds. The heightmap is inverted for the bottom surface. Only the volume above the bottom and below the top is rendered, as shown in the cross section below. A small amount of moving noise is also added to both surfaces to simulate turbulence.
 
 ![Clouds Diagram]({{ "/assets/volumetric clouds/CloudDiagram.png" | absolute_url }})
 
