@@ -15,7 +15,7 @@ The shape of the clouds is defined by a tiling perlin noise texture. This textur
 
 ![Clouds Diagram]({{ "/assets/volumetric clouds/CloudDiagram.png" | absolute_url }})
 
-The ray marching samples all have the same vertical spacing, regardless of the direction of the ray, as shown below. This ensures the clouds can always be rendered using a fixed maximum number of samples. It also means that clouds closer to the viewer are rendered with higher fidelity than clouds further away. The opacity of each ray's samples is scaled according the distance between samples. Once a ray has been almost entirely blocked by cloud, it doesn't sample any further.
+The ray marching samples all have the same vertical spacing, regardless of the direction of the ray, as shown below. This ensures the clouds can always be rendered using a fixed maximum number of samples. It also means that clouds closer to the viewer are rendered with higher fidelity than clouds further away. The opacity of each ray's samples is scaled according the distance between samples. Once a ray has been almost entirely blocked by cloud, it doesn't proceed any further.
 
 ![Clouds Diagram 2]({{ "/assets/volumetric clouds/CloudDiagram2.png" | absolute_url }})
 
