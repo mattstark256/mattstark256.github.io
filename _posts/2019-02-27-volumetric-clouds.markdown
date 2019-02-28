@@ -5,7 +5,7 @@ date: 2019-02-27 12:00:00 +0100
 tags: Unity
 ---
 
-The video below shows a Unity shader I made which renders volumetric clouds using ray marching. Ray marching involves sampling at multiple points along a ray (in this case the ray corresponding to a pixel on the screen) and combining the sample values.
+The video below shows a Unity shader I made which renders volumetric clouds using ray marching. Ray marching is a method of rendering volumetric data where a ray is cast from each pixel and the volumetric data is sampled at evenly spaced points along the ray.
 
 [Link to the project on Github][Github-repository]
 
@@ -15,7 +15,9 @@ The shape of the clouds is defined by a tiling perlin noise texture. This textur
 
 ![Clouds Diagram]({{ "/assets/volumetric clouds/CloudDiagram.png" | absolute_url }})
 
-The ray marching samples all have the same vertical spacing, regardless of the direction of the ray. This ensures the clouds can always be rendered using a fixed maximum number of samples. Once a ray has been completely blocked by cloud, it doesn't sample any further.
+The ray marching samples all have the same vertical spacing, regardless of the direction of the ray, as shown below. This ensures the clouds can always be rendered using a fixed maximum number of samples. It also means that clouds closer to the viewer are rendered with higher fidelity than clouds further away. The opacity of each ray's samples is scaled according the distance between samples. Once a ray has been almost entirely blocked by cloud, it doesn't sample any further.
+
+![Clouds Diagram 2]({{ "/assets/volumetric clouds/CloudDiagram2.png" | absolute_url }})
 
 The colour of each sample is based on the distance from the top surface. This is to make the undersides of the clouds look like they are in shadow. The opacity of each sample is based on the distance to the nearest of the two surfaces, which helps to smooth out sharp edges caused by the ray marching.
 
