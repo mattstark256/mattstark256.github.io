@@ -14,7 +14,7 @@ Firelight is a game I made as part of a team of 2 for Global Game Jam 2019. It's
 ## Cutscenes
 We wanted the game to have cutscenes with a dialogue system where the player's choice of response could affect how the conversation progressed. We decided the cutscenes should be in scripts, because this would give us the flexibility and control to make each one unique. It allowed us to use conditional statements, for loops, variables etc. We used coroutines so we could pause execution while waiting for the player's response or waiting for an animation to finish.
 
-Here is an example of a section where the camera focuses on an NPC who then asks the player a question.
+Here's an example of a section where the camera focuses on an NPC who then asks the player a question:
 
     // Smoothly move the camera to the NPC and wait until that is complete
     cutscene.Transition(transform.position);
@@ -32,5 +32,9 @@ Here is an example of a section where the camera focuses on an NPC who then asks
     {
         // This is where the response to the second option would be
     }
+
+And here's what that question looks like in game:
+
+![Question screenshot]({{ "/assets/firelight/decision.png" | absolute_url }})
 
 [Global-Game-Jam]: https://globalgamejam.org/2019/games/firelight
