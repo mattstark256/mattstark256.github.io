@@ -21,7 +21,7 @@ Here's an example of a section where the camera focuses on an NPC who then asks 
     while (cutscene.IsTransitionInProgress()) { yield return null; }
         
     // Show a speech bubble with two dialogue options and wait until the player has chosen one
-    cutscene.DialogueDecision("Are you the rescue team? I called to be rescued.", "I'm afraid not.", "Yes... I'm part of the rescue team...", true);
+    cutscene.DialogueDecision("Are you the rescue team? I called to be rescued.", "Yes... I'm part of the rescue team...", "I'm afraid not.", true);
     while (cutscene.IsDialogueInProgress()) { yield return null; }
 
     if (cutscene.GetDecisionOutcome())
