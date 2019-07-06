@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Overlock"
+date: 2019-07-06 12:00:00 +0100
+tags: Unity, Android
+---
+In June I released another Android game on the Play Store, called Overlock. It's a minimalist puzzle game about overlapping shapes, with 32 puzzles and a variety of mechanics. I created it because I wanted a slick, accessible game I could use as an example of my work. The project took about 3 weeks from conception to release.
+
+I created several custom editor tools for designing the puzzles, which made the process much faster and easier. For example, I could modify any puzzle shape by simply clicking and dragging over tiles it should cover.
+
+[Link to the game on the Play Store](https://play.google.com/store/apps/details?id=com.MattsGames.Overlock)
+
+![Play Store banner]({{ "/assets/overlock/Banner2.png" | absolute_url }})
