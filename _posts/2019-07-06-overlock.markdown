@@ -6,7 +6,7 @@ tags: Unity, Android
 ---
 ![Play Store banner]({{ "/assets/overlock/Banner2.png" | absolute_url }})
 
-In June I released another Android game on the Play Store, called Overlock. It's a minimalist puzzle game about overlapping shapes, with 32 puzzles and a variety of mechanics. I created it because I wanted a slick, accessible game I could show people as an example of my work. It was made using Unity and the project took 3 weeks from conception to release.
+In June I released another Android game on the Play Store, called Overlock. It's a minimalist puzzle game about overlapping shapes, with 32 puzzles and a variety of mechanics. I created it because I wanted a slick, accessible game I could show people as an example of my work. It was made using Unity and the project took around 3 weeks.
 
 I created several custom editor tools for designing the puzzles, which made the process much faster and easier. For example, I could modify any puzzle shape by simply clicking and dragging over tiles it should cover.
 
