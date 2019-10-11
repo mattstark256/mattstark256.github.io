@@ -18,11 +18,9 @@ First I render a copy of the camera's view containing only a silhouette of the d
 I then find the screen co-ordinates of the corners of the billboard and sample the corresponding region of the texture.
 ![Cropped Mask]({{ "/assets/smoky aura effect/Mask Clipped.png" | absolute_url }})
 
-I subtly blend the silhouette texture onto the existing billboard texture. This simulates smoke being emitted from the source at a constant rate and the rest of the smoke gradually fading away.
-![Billboard Texture]({{ "/assets/smoky aura effect/Flow.png" | absolute_url }})
-
-I distort the billboard's texture using velocity vectors based on a flow map. This is a texture where red and green values represent x and y components of velocity. I also add a constant upwards velocity. Progressively distorting the texture simulates currents in the air pushing it around.
+I blend the silhouette texture onto the existing billboard texture. This simulates smoke being emitted from the source at a constant rate and the rest of the smoke gradually fading away. I then distort the billboard's texture using velocity vectors based on a flow map. This is a texture where red and green values represent x and y components of velocity. I also add a constant upwards velocity. Progressively distorting the texture simulates currents in the air pushing it around.
 ![Flow Map]({{ "/assets/smoky aura effect/RG Perlin.png" | absolute_url }})
+![Billboard Texture]({{ "/assets/smoky aura effect/Flow.png" | absolute_url }})
 
 Finally I use the texture in a material applied to the billboard. The material's shader converts black and white to transparent and black. It fades out where it's close to the surface behind it so you don't see it clipping through the dragon. It also fades out near the edges of the billboard to prevent any sharp edges being visible.
 
