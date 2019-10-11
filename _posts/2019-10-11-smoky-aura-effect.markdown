@@ -18,11 +18,11 @@ First I render a copy of the camera's view containing only a silhouette of the d
 
 ![Mask]({{ "/assets/smoky aura effect/Mask.png" | absolute_url }})
 
-I then find the screen co-ordinates of the corners of the billboard and sample the corresponding region of the texture.
+I then find the screen co-ordinates of the corners of the billboard so I can sample the corresponding region of the texture.
 
 ![Cropped Mask]({{ "/assets/smoky aura effect/Mask Clipped.png" | absolute_url }})
 
-I blend the silhouette texture onto the existing billboard texture. This simulates smoke being emitted from the source at a constant rate and the rest of the smoke gradually fading away. I then distort the billboard's texture using velocity vectors based on a flow map. This is a texture where red and green values represent x and y components of velocity. I also add a constant upwards velocity. Progressively distorting the texture simulates currents in the air pushing it around.
+I blend this region of the silhouette texture onto the existing billboard texture. This simulates smoke being emitted from the source at a constant rate and the rest of the smoke gradually fading away. I then distort the billboard's texture using velocity vectors based on a flow map. This is a texture where red and green values represent x and y components of velocity. I also add a constant upwards velocity. Progressively distorting the texture simulates currents in the air pushing it around.
 
 ![Billboard Texture]({{ "/assets/smoky aura effect/Flow.png" | absolute_url }})
 
