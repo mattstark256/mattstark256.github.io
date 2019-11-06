@@ -48,7 +48,7 @@ The camera then renders the image using a render texture as the target. I used a
 
 ![Rendered texture]({{ "/assets/wile e coyote/GeneratedTexture.png" | absolute_url }})
 
-The following image shows the region of the texture that is occupied by the object's bounding box. As expected, the centre of the bounding box (the intersection of the red lines) is at the centre of the texture (the intersection of the blue lines). The largest field of view required for any of the corners was the vertical field of view for the bottom right corner. As a result, the bottom right corner touches the bottom of the texture.
+The following image shows the region of the texture that is occupied by the object's bounding box. The centre of the bounding box (the intersection of the red lines) is at the centre of the texture (the intersection of the blue lines). The largest field of view required for any of the corners was the vertical field of view for the bottom right corner. As a result, the bottom right corner touches the bottom of the texture.
 
 ![Rendered texture diagram]({{ "/assets/wile e coyote/GeneratedTextureDiagram.png" | absolute_url }})
 
