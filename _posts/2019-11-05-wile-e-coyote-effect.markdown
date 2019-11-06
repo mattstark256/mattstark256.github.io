@@ -81,4 +81,4 @@ The texture is now correctly mapped onto the object!
 
 ![Correctly mapped texture]({{ "/assets/wile e coyote/CorrectProjection.png" | absolute_url }})
 
-An alternative approach would be to project the texture just once and store it. This would be faster but it would be challenging to implement it in such a way that it could handle objects more complex than planes.
+An alternative approach would be to project the texture just once and store it in another texture. This would be faster but it would be challenging to implement it in such a way that it could handle objects more complex than planes.
