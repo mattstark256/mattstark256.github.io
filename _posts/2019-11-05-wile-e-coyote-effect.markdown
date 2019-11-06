@@ -48,16 +48,16 @@ The camera then renders the image using a render texture as the target. I used a
 
 ![Rendered texture]({{ "/assets/wile e coyote/GeneratedTexture.png" | absolute_url }})
 
-The following image shows the region of the image that is occupied by the object's bounding box. As expected, the centre of the bounding box (the intersection of the red lines) is at the centre of the image (the intersection of the blue lines). The largest field of view required for any of the corners was the vertical field of view for the bottom right corner. As a result, the bottom right corner touches the bottom of the texture.
+The following image shows the region of the texture that is occupied by the object's bounding box. As expected, the centre of the bounding box (the intersection of the red lines) is at the centre of the texture (the intersection of the blue lines). The largest field of view required for any of the corners was the vertical field of view for the bottom right corner. As a result, the bottom right corner touches the bottom of the texture.
 
 ![Rendered texture diagram]({{ "/assets/wile e coyote/GeneratedTextureDiagram.png" | absolute_url }})
 
 ### Applying the texture to the object
-The next challenge is correctly mapping the texture to the object. If we just applied the texture using the object's UV coordinates it would look like this (I've enabled wireframe to make the shape clearer):
+The next challenge is correctly mapping the texture onto the object. If we just applied the texture using the object's UV coordinates it would look like this (I've enabled wireframe to make the shape clearer):
 
 ![Incorrectly mapped texture]({{ "/assets/wile e coyote/WrongProjection.png" | absolute_url }})
 
-In order to correctly map the texture to the object, the object's vertex positions are projected into the screen space of the temporary camera. The projected positions are used to sample the texture.
+In order to correctly map the texture onto the object, the object's vertex positions are projected into the screen space of the temporary camera. The projected positions are used to sample the texture.
 
 Before the temporary camera is deleted, the matrix which converts world space to the camera's screen space is calculated. This is found by multiplying the projection matrix by the world to camera matrix:
 
@@ -67,7 +67,7 @@ This matrix is passed to a shader along with the texture. In the vert shader the
 
 	o.worldPos = mul(unity_ObjectToWorld, v.vertex);
 
-In the frag shader the world position is projected into screen space and used to sample the texture:
+In the frag shader the world position is projected into the screen space of the temporary camera and is used to sample the texture:
 
     // Convert the position from world space to screen space
     float4 screenPos = mul(_WorldToCam, float4(i.worldPos.xyz, 1));
@@ -76,5 +76,9 @@ In the frag shader the world position is projected into screen space and used to
     uv = (uv + float2(1, 1)) / 2; // Convert it from the range -1 to 1 to the range 0 to 1
     // Sample the texture
     fixed4 col = tex2D(_CamTex, uv);
+
+The texture is now correctly mapped onto the object!
+
+![Correctly mapped texture]({{ "/assets/wile e coyote/CorrectProjection.png" | absolute_url }})
 
 An alternative approach would be to project the texture just once and store it. This would be faster but it would be challenging to implement it in such a way that it could handle objects more complex than planes.
