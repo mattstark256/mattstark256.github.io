@@ -50,12 +50,12 @@ The camera then renders the image using a render texture as the target. I used a
 
 The following image shows the region of the image that is occupied by the object's bounding box. As expected, the centre of the bounding box (the intersection of the red lines) is at the centre of the image (the intersection of the blue lines). The largest field of view required for any of the corners was the vertical field of view for the bottom right corner. As a result, the bottom right corner touches the bottom of the texture.
 
-![Rendered texture diagram]({{ "/assets/wile e coyote/GeneratedTextureDiagram.png" | absolute_url }
+![Rendered texture diagram]({{ "/assets/wile e coyote/GeneratedTextureDiagram.png" | absolute_url }})
 
 ### Applying the texture to the object
 The next challenge is correctly mapping the texture to the object. If we just applied the texture using the object's UV coordinates it would look like this (I've enabled wireframe to make the shape clearer):
 
-![Incorrectly mapped texture]({{ "/assets/wile e coyote/WrongProjection.png" | absolute_url }
+![Incorrectly mapped texture]({{ "/assets/wile e coyote/WrongProjection.png" | absolute_url }})
 
 In order to correctly map the texture to the object, the object's vertex positions are projected into the screen space of the temporary camera. The projected positions are used to sample the texture.
 
