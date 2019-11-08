@@ -59,21 +59,22 @@ The next challenge is correctly mapping the texture onto the object. If we just 
 
 In order to correctly map the texture onto the object, the object's vertex positions are projected into the screen space of the temporary camera. The projected positions are used to sample the texture.
 
-Before the temporary camera is deleted, the matrix which converts world space to the camera's screen space is calculated. This is found by multiplying the projection matrix by the world to camera matrix:
+Before the temporary camera is deleted, the matrix which converts world space to the camera's clip space is calculated. This is found by multiplying the projection matrix by the world to camera matrix:
 
     camMatrix = cam.projectionMatrix * cam.worldToCameraMatrix;
 
-This matrix is passed to a shader along with the texture. In the vert shader the world position of the vertex is calculated (worldPos is a float3 added to the v2f struct).
+This matrix is passed to a shader along with the texture. In the vert shader the vertex position is projected first into world space then into the temporary camera's clip space (clipPos is a float4 added to the v2f struct and _WorldToCam is the matrix that was passed to the shader).
 
-	o.worldPos = mul(unity_ObjectToWorld, v.vertex);
+    // Project the vertex into world space
+	float3 worldPos = mul(unity_ObjectToWorld, v.vertex);
+    // Project the world space position into the temporary camera's clip space
+	o.clipPos = mul(_WorldToCam, float4(worldPos, 1));
 
-In the frag shader the world position is projected into the screen space of the temporary camera and is used to sample the texture:
+In the frag shader the clip space position is converted into UV coordinates that are used to sample the texture:
 
-    // Convert the position from world space to screen space
-    float4 screenPos = mul(_WorldToCam, float4(i.worldPos.xyz, 1));
     // Get the UV coordinate
-    float2 uv = screenPos.xy / screenPos.w;
-    uv = (uv + float2(1, 1)) / 2; // Convert it from the range -1 to 1 to the range 0 to 1
+	float2 uv = i.clipPos.xy / i.clipPos.w;
+	uv = (uv + float2(1, 1)) / 2; // Convert it from the range -1 to 1 to the range 0 to 1
     // Sample the texture
     fixed4 col = tex2D(_CamTex, uv);
 
